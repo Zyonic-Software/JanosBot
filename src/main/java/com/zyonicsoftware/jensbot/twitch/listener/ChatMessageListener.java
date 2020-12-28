@@ -19,10 +19,10 @@ public class ChatMessageListener {
     public void onChatMessage(ChannelMessageEvent event) {
         System.out.println(event.getUser().getName() + ": " + event.getMessage());
 
-        if(event.getMessage().toLowerCase().startsWith("!createcommand")) {
+        if(event.getMessage().toLowerCase().startsWith("!createcommand") || event.getMessage().toLowerCase().startsWith("!cc")) {
             this.editorCommands.createCommand(event);
             return;
-        } else if(event.getMessage().toLowerCase().startsWith("!deletecommand")) {
+        } else if(event.getMessage().toLowerCase().startsWith("!deletecommand") || event.getMessage().toLowerCase().startsWith("!rc")) {
             this.editorCommands.removeCommand(event);
             return;
         }

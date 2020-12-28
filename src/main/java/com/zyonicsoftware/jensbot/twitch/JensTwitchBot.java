@@ -46,6 +46,10 @@ public class JensTwitchBot {
         twitchChat.sendMessage(channel, message);
     }
 
+    public void sendPrivateMessage(final String user, final String message) {
+        twitchChat.sendPrivateMessage(user, message);
+    }
+
     public JensController getJensController() {
         return jensController;
     }

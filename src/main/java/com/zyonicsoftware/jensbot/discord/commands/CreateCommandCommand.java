@@ -19,7 +19,7 @@ public class CreateCommandCommand extends Command {
 
     @Override
     protected void execute(CommandEvent event, MaddoxMember sender, MaddoxGuild server) {
-        if(sender.hasPermission(Permission.ADMINISTRATOR)) {
+        if(sender.hasPermission(Permission.MANAGE_CHANNEL)) {
             if(event.getArguments().size() > 0) {
                 String newCommand = event.getArguments().get(0).toLowerCase();
                 String newCommandFeedback = event.getArgumentsAsString().substring(newCommand.length() + 1);

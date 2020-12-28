@@ -1,9 +1,6 @@
 package com.zyonicsoftware.jensbot.discord;
 
-import com.zyonicsoftware.jensbot.discord.commands.CreateCommandCommand;
-import com.zyonicsoftware.jensbot.discord.commands.EmbedCommand;
-import com.zyonicsoftware.jensbot.discord.commands.RemoveCommandCommand;
-import com.zyonicsoftware.jensbot.discord.commands.TwitchCommand;
+import com.zyonicsoftware.jensbot.discord.commands.*;
 import com.zyonicsoftware.jensbot.discord.listener.GuildMemberJoinListener;
 import com.zyonicsoftware.jensbot.discord.listener.GuildMessageReceivedListener;
 import com.zyonicsoftware.jensbot.discord.listener.GuildMessageUpdateListener;
@@ -67,7 +64,8 @@ public class JensDiscordBot {
                 new TwitchCommand(),
                 new EmbedCommand(),
                 new CreateCommandCommand(this),
-                new RemoveCommandCommand(this)
+                new RemoveCommandCommand(this),
+                new CommandListCommand(this)
         );
     }
 

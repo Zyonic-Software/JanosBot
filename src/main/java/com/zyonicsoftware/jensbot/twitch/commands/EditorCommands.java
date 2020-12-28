@@ -14,8 +14,8 @@ public class EditorCommands {
 
     public void createCommand(ChannelMessageEvent event) {
         if(event.getPermissions().contains(CommandPermission.MODERATOR) || event.getUser().getName().equals("azraanimating")) {
-            String commandName = event.getMessage().substring("!createcommand ".length()).split(" ")[0].toLowerCase();
-            String commandResponse = event.getMessage().substring("!createcommand ".length() + commandName.length() + 1);
+            String commandName = event.getMessage().split(" ")[1].toLowerCase();
+            String commandResponse = event.getMessage().substring(event.getMessage().split(" ")[0].length() + commandName.length() + 1);
 
             this.jensController.getMySQLManager().addNewCommand(commandName, commandResponse);
             this.jensController.getJensTwitchBot().sendMessage("Command hinzugefügt!");
@@ -24,7 +24,7 @@ public class EditorCommands {
 
     public void removeCommand(ChannelMessageEvent event) {
         if(event.getPermissions().contains(CommandPermission.MODERATOR) || event.getUser().getName().equals("azraanimating")) {
-            String commandName = event.getMessage().substring("!removecommand ".length()).split(" ")[0].toLowerCase();
+            String commandName = event.getMessage().split(" ")[1];
 
             this.jensController.getMySQLManager().removeCommand(commandName);
             this.jensController.getJensTwitchBot().sendMessage("Command entfernt!");

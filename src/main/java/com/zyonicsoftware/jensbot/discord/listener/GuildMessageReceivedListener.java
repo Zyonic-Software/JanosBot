@@ -20,7 +20,7 @@ public class GuildMessageReceivedListener extends ListenerAdapter {
         }
 
         if(this.jensDiscordBot.getJensController().getMySQLManager().getCommandCache().containsKey(event.getMessage().getContentRaw().split(" ")[0].toLowerCase())) {
-            event.getChannel().sendMessage(this.jensDiscordBot.getJensController().getMySQLManager().getCommandCache().get(event.getMessage().getContentRaw().split(" ")[0])).queue();
+            event.getChannel().sendMessage(this.jensDiscordBot.getJensController().getMySQLManager().getCommandCache().get(event.getMessage().getContentRaw().split(" ")[0].toLowerCase())).queue();
             return;
         }
 

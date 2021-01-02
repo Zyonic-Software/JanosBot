@@ -19,7 +19,7 @@ public class ChatMessageListener {
     public void onChatMessage(ChannelMessageEvent event) {
         System.out.println(event.getUser().getName() + ": " + event.getMessage());
 
-        if(event.getMessage().toLowerCase().startsWith("!createcommand") || event.getMessage().toLowerCase().startsWith("!cc")) {
+        if(event.getMessage().toLowerCase().startsWith("!createcommand") || event.getMessage().toLowerCase().startsWith("!cc") || event.getMessage().toLowerCase().startsWith("!ec")) {
             this.editorCommands.createCommand(event);
             return;
         } else if(event.getMessage().toLowerCase().startsWith("!deletecommand") || event.getMessage().toLowerCase().startsWith("!rc")) {

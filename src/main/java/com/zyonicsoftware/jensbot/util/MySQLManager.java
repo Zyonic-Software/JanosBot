@@ -33,8 +33,11 @@ public class MySQLManager {
 
     public void addNewCommand(String commandName, String commandReply) {
         try {
-            if(!this.commandCache.containsKey(commandName)) {
+            if(!commandCache.containsKey(commandName)) {
                 this.mySQL.executeUpdate("INSERT INTO twdcCommands(commandname, response) VALUES ('" + commandName + "','" + commandReply + "');");
+                this.commandCache.put(commandName, commandReply);
+            } else {
+                this.mySQL.executeUpdate("UPDATE twdcCommands SET response = '" + commandReply + "' WHERE commandname = '" + commandName + "';");
                 this.commandCache.put(commandName, commandReply);
             }
         } catch (SQLException throwables) {

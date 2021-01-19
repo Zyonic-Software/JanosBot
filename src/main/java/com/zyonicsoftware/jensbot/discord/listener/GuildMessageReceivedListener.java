@@ -19,6 +19,10 @@ public class GuildMessageReceivedListener extends ListenerAdapter {
             return;
         }
 
+        if(event.getChannel().getId().equalsIgnoreCase("750355701804564491") || event.getChannel().getId().equalsIgnoreCase("759395529435119657")) {
+            return;
+        }
+
         if(this.jensDiscordBot.getJensController().getMySQLManager().getCommandCache().containsKey(event.getMessage().getContentRaw().split(" ")[0].toLowerCase())) {
             event.getChannel().sendMessage(this.jensDiscordBot.getJensController().getMySQLManager().getCommandCache().get(event.getMessage().getContentRaw().split(" ")[0].toLowerCase())).queue();
             return;

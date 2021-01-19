@@ -13,7 +13,7 @@ public class CreateCommandCommand extends Command {
     private final JensDiscordBot jensDiscordBot;
 
     public CreateCommandCommand(JensDiscordBot jensDiscordBot) {
-        this.setName("createcommand");
+        this.setName("cc");
         this.jensDiscordBot = jensDiscordBot;
     }
 

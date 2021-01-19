@@ -12,7 +12,7 @@ public class RemoveCommandCommand extends Command {
     private final JensDiscordBot jensDiscordBot;
 
     public RemoveCommandCommand(JensDiscordBot jensDiscordBot) {
-        this.setName("deletecommand");
+        this.setName("rc");
         this.jensDiscordBot = jensDiscordBot;
     }
 

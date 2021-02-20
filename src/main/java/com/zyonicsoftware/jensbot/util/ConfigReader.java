@@ -27,6 +27,8 @@ public class ConfigReader {
                 config.setMySQLDatabase(yamlFile.getString("mySQLDatabase"));
                 config.setMySQLUser(yamlFile.getString("mySQLUsername"));
                 config.setMySQLPassword(yamlFile.getString("mySQLPassword"));
+                config.setApiPort(yamlFile.getInt("apiPort"));
+                config.setAllowedTokens(yamlFile.getString("allowedTokens"));
             } else {
 
                 final YamlConfiguration yamlConfiguration = YamlConfiguration.loadConfiguration(configFile);
@@ -49,6 +51,10 @@ public class ConfigReader {
                 yamlConfiguration.set("mySQLUsername", "Janos");
                 yamlConfiguration.createSection("mySQLPassword");
                 yamlConfiguration.set("mySQLPassword", "please_use_a_safe_password");
+                yamlConfiguration.createSection("apiPort");
+                yamlConfiguration.set("apiPort", 1234);
+                yamlConfiguration.createSection("allowedTokens");
+                yamlConfiguration.set("allowedTokens", "irgendwelche_Tokens_seperiert_mit_;");
 
                 yamlConfiguration.save(configFile);
             }

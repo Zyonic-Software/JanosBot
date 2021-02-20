@@ -1,7 +1,6 @@
 package com.zyonicsoftware.jensbot.discord.commands;
 
 import com.zyonicsoftware.jensbot.discord.JensDiscordBot;
-import com.zyonicsoftware.jensbot.main.JensController;
 import de.azraanimating.maddoxengine.handling.command.Command;
 import de.azraanimating.maddoxengine.handling.command.CommandEvent;
 import de.azraanimating.maddoxengine.handling.objects.MaddoxGuild;

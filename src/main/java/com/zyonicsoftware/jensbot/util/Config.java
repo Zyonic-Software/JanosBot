@@ -1,5 +1,10 @@
 package com.zyonicsoftware.jensbot.util;
 
+import com.zyonicsoftware.jensbot.restapi.RestAPIController;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+
 public class Config {
 
     private String discordToken;
@@ -11,6 +16,7 @@ public class Config {
     private String mySQLDatabase;
     private String mySQLUser;
     private String mySQLPassword;
+    private int port;
 
     public int getMySQLPort() {
         return mySQLPort;
@@ -82,5 +88,18 @@ public class Config {
 
     public void setMySQLDatabase(String mySQLDatabase) {
         this.mySQLDatabase = mySQLDatabase;
+    }
+
+    public void setAllowedTokens(String allowedTokens) {
+        String[] tokens = allowedTokens.split(";");
+        RestAPIController.allowedKeys = new ArrayList<>(Arrays.asList(tokens));
+    }
+
+    public void setApiPort(int port) {
+        this.port = port;
+    }
+
+    public int getPort() {
+        return port;
     }
 }

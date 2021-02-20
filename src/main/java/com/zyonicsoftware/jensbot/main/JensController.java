@@ -1,6 +1,7 @@
 package com.zyonicsoftware.jensbot.main;
 
 import com.zyonicsoftware.jensbot.discord.JensDiscordBot;
+import com.zyonicsoftware.jensbot.restapi.RestAPIController;
 import com.zyonicsoftware.jensbot.twitch.JensTwitchBot;
 import com.zyonicsoftware.jensbot.util.Config;
 import com.zyonicsoftware.jensbot.util.MySQLManager;
@@ -18,6 +19,7 @@ public class JensController {
         try {
             this.initDiscord(config.getDiscordToken());
             this.mySQLManager = new MySQLManager(this, config.getMySQLHost(), config.getMySQLPort(), config.getMySQLUser(), config.getMySQLPassword(), config.getMySQLDatabase());
+            RestAPIController.mySQLManager = this.mySQLManager;
         } catch (Exception e) {
             e.printStackTrace();
         }
